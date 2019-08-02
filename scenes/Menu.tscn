@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sounds/garagetest.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -25,4 +26,8 @@ hint_tooltip = "Start the game"
 custom_fonts/font = SubResource( 1 )
 text = "Start"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 [connection signal="pressed" from="Button" to="." method="_on_Start_Button_pressed"]
