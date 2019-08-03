@@ -28,7 +28,7 @@ func _on_Player_asleep():
 
 func _reset_player():
 	$Player._init()
-	$Player.position = $StartPosition.position
+	$Player.position = current_level_instance.get_node("StartPosition").position
 
 func _reset_scene():
 	remove_child(current_level_instance)
@@ -38,13 +38,18 @@ func _reset_scene():
 
 func _next_scene():
 	_next_scene_mutex = true
-	$FadeOut.play("fade")
-	yield($FadeOut, "animation_finished")
-	remove_child(current_level_instance)
-	current_level += 1
-	current_level_instance = levels[current_level].instance()
-	add_child(current_level_instance)
-	_reset_player()
+	if levels.size()-1 > current_level:
+		$FadeOut.play("fade")
+		yield($FadeOut, "animation_finished")
+		remove_child(current_level_instance)
+		current_level += 1
+		current_level_instance = levels[current_level].instance()
+		add_child(current_level_instance)
+		_reset_player()
+	else:
+		$FadeOut.play("fade")
+		yield($FadeOut, "animation_finished")
+		get_tree().change_scene("res://scenes/End.tscn")
 	_next_scene_mutex = false
 
 func _on_Player_energy_changed(energy_level):
