@@ -5,6 +5,7 @@ signal input_changed(new_input)
 signal screen_entered
 signal screen_exited
 signal asleep
+signal energy_changed(energy_level)
 
 const INPUTS = ["right", "left", "jump"]
 
@@ -84,6 +85,7 @@ func _move(input, delta):
 	velocity.x /= FRICTION
 	current_energy -= abs(input.x)
 	current_energy -= input.y * 10
+	emit_signal("energy_changed", current_energy)
 
 func _has_input_changed(inputs):
 	for input in inputs:
