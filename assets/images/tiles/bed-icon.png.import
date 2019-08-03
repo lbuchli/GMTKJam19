@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coffee-icon.png-3b619e8b5d2bcdcaaa637532cabcc6c1.stex"
+path="res://.import/bed-icon.png-48338674492c6d504f2f924c7e4639c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://coffee-icon.png"
-dest_files=[ "res://.import/coffee-icon.png-3b619e8b5d2bcdcaaa637532cabcc6c1.stex" ]
+source_file="res://assets/images/tiles/bed-icon.png"
+dest_files=[ "res://.import/bed-icon.png-48338674492c6d504f2f924c7e4639c3.stex" ]
 
 [params]
 

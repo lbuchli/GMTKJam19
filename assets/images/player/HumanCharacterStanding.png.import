@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bed-icon.png-50d404668026602376cef95e47a8cafa.stex"
+path="res://.import/HumanCharacterStanding.png-467bde7c2cd730571268e34c9a983b14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bed-icon.png"
-dest_files=[ "res://.import/bed-icon.png-50d404668026602376cef95e47a8cafa.stex" ]
+source_file="res://assets/images/player/HumanCharacterStanding.png"
+dest_files=[ "res://.import/HumanCharacterStanding.png-467bde7c2cd730571268e34c9a983b14.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -24,10 +24,10 @@ script = ExtResource( 1 )
 levels = [ ExtResource( 2 ) ]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 240.75, 263.25 )
+position = Vector2( 6.74969, -11.2503 )
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 535.501, 261 )
+position = Vector2( 87.7505, 191.25 )
 
 [node name="FadeOut" type="AnimationPlayer" parent="."]
 anims/fade = SubResource( 1 )
