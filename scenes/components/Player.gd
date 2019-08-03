@@ -15,7 +15,7 @@ const MOVEMENT_SPEED = 400
 const FRICTION = 29
 const JUMP_STRENGTH = 1000
 const GRAVITATION = 50
-const INPUT_DELAY = 500
+const INPUT_DELAY = 700
 const ENERGY = float(5)
 
 class InputQueueEntry:
@@ -53,8 +53,8 @@ func _physics_process(delta):
 		jumped = Input.is_action_just_pressed("jump")
 		
 		var new_input = Vector2(
-					int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left")),
-					int(jumped)
+			int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left")),
+			int(jumped)
 		)
 		
 		emit_signal("input_changed", new_input)
@@ -89,7 +89,6 @@ func _move(input, delta):
 	# energy
 	current_energy -= abs(input.x) * delta
 	current_energy += jump * 10 * delta
-	emit_signal("energy_changed", current_energy)
 	
 	# animation
 	if is_on_floor():
