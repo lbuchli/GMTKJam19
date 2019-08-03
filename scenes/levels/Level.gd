@@ -28,7 +28,7 @@ func _on_Player_asleep():
 
 func _reset_player():
 	$Player._init()
-	$Player.position = current_level_instance.get_node("StartPosition").position
+	$Player.position = $StartPosition.position
 
 func _reset_scene():
 	remove_child(current_level_instance)
@@ -45,6 +45,7 @@ func _next_scene():
 		current_level += 1
 		current_level_instance = levels[current_level].instance()
 		add_child(current_level_instance)
+		$HUDLayer/Day.text = "Day " + str(current_level + 1)
 		_reset_player()
 	else:
 		$FadeOut.play("fade")
