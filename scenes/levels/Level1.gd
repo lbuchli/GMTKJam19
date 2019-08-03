@@ -19,3 +19,7 @@ func _on_Player_screen_entered():
 
 func _on_Player_screen_exited():
 	$Player.position = $StartPosition.position
+
+
+func _on_Player_asleep():
+	$Player.position = $StartPosition.position

@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/sounds/tontest-video.ogg" type="AudioStream" id=3]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 2 )
 
@@ -12,7 +12,7 @@ font_data = ExtResource( 2 )
 size = 24
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "Storytransition"
 step = 0.5
 tracks/0/type = "value"
@@ -55,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 200.0
 margin_right = -200.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "After a long night, Erwin  has had only one hour of sleep. His reaction time is nearing a second and he's constantly in danger of falling asleep. But he still has to go to work. This is his journey."
 align = 1
 valign = 1
@@ -84,5 +84,5 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Storytransition = SubResource( 6 )
+anims/Storytransition = SubResource( 3 )
 [connection signal="pressed" from="StartMenu/Button" to="." method="_on_Start_Button_pressed"]

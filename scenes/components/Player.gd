@@ -4,6 +4,7 @@ signal input_changed(new_input)
 
 signal screen_entered
 signal screen_exited
+signal asleep
 
 const INPUTS = ["right", "left", "jump"]
 
@@ -14,6 +15,7 @@ const FRICTION = 29
 const JUMP_STRENGTH = 1000
 const GRAVITATION = 50
 const INPUT_DELAY = 500
+const ENERGY = 200
 
 class InputQueueEntry:
 	var timestamp : int
@@ -24,6 +26,7 @@ class InputQueueEntry:
 		self.input = input
 
 var velocity = Vector2(0, 0)
+var current_energy = ENERGY
 
 var input_queue = []
 var current_input = Vector2(0, 0)
@@ -39,6 +42,11 @@ func _ready():
 #	pass
 
 func _physics_process(delta):
+	# if asleep, do not react
+	if current_energy <= 0:
+		fall_asleep()
+		return
+	
 	# push new input
 	if _has_input_changed(INPUTS) or jumped:
 		jumped = Input.is_action_just_pressed("jump")
@@ -74,6 +82,8 @@ func _move(input, delta):
 		), UP
 	)
 	velocity.x /= FRICTION
+	current_energy -= abs(input.x)
+	current_energy -= input.y * 10
 
 func _has_input_changed(inputs):
 	for input in inputs:
@@ -87,3 +97,9 @@ func _on_Visibility_screen_entered():
 
 func _on_Visibility_screen_exited():
 	emit_signal("screen_exited")
+	
+func fall_asleep():
+	$AnimatedSprite.play("fall_asleep")
+	yield($AnimatedSprite, "animation_finished")
+	emit_signal("asleep")
+	current_energy = ENERGY
