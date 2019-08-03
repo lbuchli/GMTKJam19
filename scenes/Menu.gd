@@ -1,17 +1,19 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var _start_time : int
+
+var animation_finished = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_start_time = OS.get_system_time_msecs()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _input(event):
+	if animation_finished:
+		get_tree().change_scene("res://scenes/levels/Level1.tscn")
+	
 
 func _on_Start_Button_pressed():
-	get_tree().change_scene("res://scenes/levels/Level1.tscn")
+	$AnimationPlayer.play("Storytransition")
+	yield($AnimationPlayer, "animation_finished")
+	animation_finished = true

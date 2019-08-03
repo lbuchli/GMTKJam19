@@ -20,12 +20,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "run",
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "jump",
+"name": "run",
 "speed": 5.0
 } ]
 
@@ -40,8 +40,5 @@ frames = SubResource( 2 )
 animation = "idle"
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
 [connection signal="screen_entered" from="Visibility" to="." method="_on_Visibility_screen_entered"]
 [connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
