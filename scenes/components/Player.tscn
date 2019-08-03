@@ -40,5 +40,8 @@ frames = SubResource( 2 )
 animation = "idle"
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 [connection signal="screen_entered" from="Visibility" to="." method="_on_Visibility_screen_entered"]
 [connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
