@@ -16,7 +16,7 @@ const FRICTION = 29
 const JUMP_STRENGTH = 1000
 const GRAVITATION = 50
 const INPUT_DELAY = 500
-const ENERGY = 200
+const ENERGY = float(5)
 
 class InputQueueEntry:
 	var timestamp : int
@@ -76,6 +76,7 @@ func _physics_process(delta):
 	)
 
 func _move(input, delta):
+	# movement
 	velocity = move_and_slide(
 		Vector2(
 			input.x*MOVEMENT_SPEED + velocity.x,
@@ -83,9 +84,20 @@ func _move(input, delta):
 		), UP
 	)
 	velocity.x /= FRICTION
-	current_energy -= abs(input.x)
-	current_energy -= input.y * 10
+	
+	# energy
+	current_energy -= abs(input.x) * delta
+	current_energy -= input.y * 10 * delta
 	emit_signal("energy_changed", current_energy)
+	
+	# animation
+	if input.x == 0:
+		$AnimatedSprite.play("idle")
+	else:
+		$AnimatedSprite.flip_h = input.x < 0
+		$AnimatedSprite.play("run")
+		
+		
 
 func _has_input_changed(inputs):
 	for input in inputs:

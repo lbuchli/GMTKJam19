@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/curtain.png-d93c70932e16e4088376b6df58de895c.stex"
+path="res://.import/HumanCharacterWalking_0.png-53281a8fbd017f5415bacc5f2a5f290f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/masks/curtain.png"
-dest_files=[ "res://.import/curtain.png-d93c70932e16e4088376b6df58de895c.stex" ]
+source_file="res://assets/Images/Player/HumanCharacterWalking_0.png"
+dest_files=[ "res://.import/HumanCharacterWalking_0.png-53281a8fbd017f5415bacc5f2a5f290f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

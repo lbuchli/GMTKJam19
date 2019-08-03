@@ -9,8 +9,8 @@ func _ready():
 	_start_time = OS.get_system_time_msecs()
 
 func _input(event):
-	if animation_finished:
-		get_tree().change_scene("res://scenes/levels/Level1.tscn")
+	if animation_finished and event.is_pressed():
+		get_tree().change_scene("res://scenes/levels/Level.tscn")
 	
 
 func _on_Start_Button_pressed():
