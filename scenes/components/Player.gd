@@ -77,27 +77,32 @@ func _physics_process(delta):
 
 func _move(input, delta):
 	# movement
+	var jump = -input.y if is_on_floor() else 0
 	velocity = move_and_slide(
 		Vector2(
 			input.x*MOVEMENT_SPEED + velocity.x,
-			(-input.y*JUMP_STRENGTH if is_on_floor() else 0) + velocity.y + GRAVITATION
+			jump*JUMP_STRENGTH + velocity.y + GRAVITATION
 		), UP
 	)
 	velocity.x /= FRICTION
 	
 	# energy
 	current_energy -= abs(input.x) * delta
-	current_energy -= input.y * 10 * delta
+	current_energy += jump * 10 * delta
 	emit_signal("energy_changed", current_energy)
 	
 	# animation
-	if input.x == 0:
-		$AnimatedSprite.play("idle")
+	if is_on_floor():
+		if input.x == 0:
+			$AnimatedSprite.play("idle")
+		else:
+			$AnimatedSprite.flip_h = input.x < 0
+			$AnimatedSprite.play("run")
 	else:
 		$AnimatedSprite.flip_h = input.x < 0
-		$AnimatedSprite.play("run")
 		
-		
+	if jump < 0:
+		$AnimatedSprite.play("jump")
 
 func _has_input_changed(inputs):
 	for input in inputs:
@@ -114,6 +119,8 @@ func _on_Visibility_screen_exited():
 	
 func fall_asleep():
 	$AnimatedSprite.play("fall_asleep")
+	$CollisionShape2D.position.y += 16*4
 	yield($AnimatedSprite, "animation_finished")
+	$CollisionShape2D.position.y -= 16*4
 	emit_signal("asleep")
 	current_energy = ENERGY
