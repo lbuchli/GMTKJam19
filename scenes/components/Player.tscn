@@ -39,4 +39,6 @@ shape = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "idle"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Visibility" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_entered" from="Visibility" to="." method="_on_Visibility_screen_entered"]
+[connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
