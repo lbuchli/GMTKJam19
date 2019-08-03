@@ -1,16 +1,38 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/sounds/tontest-video.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/fonts/OpenSans-ExtraBold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sounds/tontest-video.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/fonts/OpenSans-SemiboldItalic.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/fonts/OpenSans-Italic.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/images/tiles/bed-icon.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 24
-font_data = ExtResource( 2 )
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0.0352941, 0.117647, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 128
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Storytransition"
@@ -56,7 +78,7 @@ anchor_bottom = 1.0
 margin_left = 200.0
 margin_right = -200.0
 custom_fonts/font = SubResource( 1 )
-text = "After a long night, Erwin  has had only one hour of sleep. His reaction time is nearing a second and he's constantly in danger of falling asleep. But he still has to go to work. This is his journey."
+text = "After a long night, Erwin has had only one hour of sleep. His reaction time is nearing a whole second and he's constantly in danger of falling asleep. But he still has to go to work. This is his journey."
 align = 1
 valign = 1
 autowrap = true
@@ -71,17 +93,54 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -25.5
-margin_right = 50.0
-margin_bottom = 25.5
-custom_fonts/font = SubResource( 2 )
+margin_left = -68.5
+margin_top = -100.0
+margin_right = 68.5
+margin_bottom = -27.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.741176, 0.835294, 1, 1 )
+custom_colors/font_color_hover = Color( 0.533333, 0.666667, 1, 1 )
 text = "Start"
 flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StartMenu"]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 autoplay = true
+
+[node name="Title" type="Label" parent="StartMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -163.0
+margin_top = -320.0
+margin_right = 163.0
+margin_bottom = -175.0
+custom_fonts/font = SubResource( 4 )
+text = "Erwin"
+align = 1
+
+[node name="Subtitle" type="Label" parent="StartMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -238.5
+margin_top = -164.0
+margin_right = 238.5
+margin_bottom = -100.0
+custom_fonts/font = SubResource( 10 )
+text = "Short interactive sleep deprivation"
+align = 1
+
+[node name="bed-icon" type="Sprite" parent="StartMenu"]
+position = Vector2( 512.626, 102.784 )
+scale = Vector2( 16, 16 )
+texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Storytransition = SubResource( 3 )
