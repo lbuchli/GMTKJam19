@@ -12,11 +12,6 @@ func _ready():
 	current_level_instance = levels[current_level].instance()
 	add_child(current_level_instance)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_Player_screen_entered():
 	_reset_player()
 
@@ -53,7 +48,7 @@ func _next_scene():
 		get_tree().change_scene("res://scenes/End.tscn")
 	_next_scene_mutex = false
 
-func _on_Player_energy_changed(energy_level):
+func _physics_process(delta):
 	var tilemap = current_level_instance.get_node("TileMap")
 	var ppos = tilemap.world_to_map($Player.position)
 	ppos.y += 1
@@ -64,5 +59,6 @@ func _on_Player_energy_changed(energy_level):
 		if not _next_scene_mutex:
 			_next_scene()
 	
+	var energy_level = $Player.current_energy
 	var darkness =  ($Player.ENERGY - energy_level)/($Player.ENERGY*2)
 	set("modulate", Color(1-darkness, 1-darkness, 1-darkness))
