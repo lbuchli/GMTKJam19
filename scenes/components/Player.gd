@@ -11,9 +11,9 @@ const INPUTS = ["right", "left", "jump"]
 
 const UP = Vector2(0, -1)
 
-const MOVEMENT_SPEED = 400
+const MOVEMENT_SPEED = 300
 const FRICTION = 29
-const JUMP_STRENGTH = 1000
+const JUMP_STRENGTH = 800
 const GRAVITATION = 50
 const INPUT_DELAY = 700
 const ENERGY = float(5)
