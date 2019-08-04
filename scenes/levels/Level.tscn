@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/levels/Level2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/components/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/fonts/OpenSans-Bold.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/sounds/maintheme.wav" type="AudioStream" id=6]
-[ext_resource path="res://gdresources/Tileset.tres" type="TileSet" id=7]
-[ext_resource path="res://scenes/components/ParallaxBackground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/levels/Level3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/levels/Level4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/OpenSans-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/sounds/maintheme.wav" type="AudioStream" id=8]
+[ext_resource path="res://gdresources/Tileset.tres" type="TileSet" id=9]
+[ext_resource path="res://scenes/components/ParallaxBackground.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -31,7 +33,7 @@ tracks/1/imported = false
 tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 4.13855e+16 ),
+"transitions": PoolRealArray( 1, 1, 4.13855e+016 ),
 "update": 0,
 "values": [ 0.0, 90.0, 0.0 ]
 }
@@ -50,13 +52,13 @@ tracks/2/keys = {
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
-font_data = ExtResource( 5 )
+font_data = ExtResource( 7 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
-levels = [ ExtResource( 2 ), ExtResource( 3 ) ]
+levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 6.74969, -11.2503 )
 
 [node name="FadeOut" type="AnimationPlayer" parent="."]
@@ -75,18 +77,18 @@ custom_fonts/font = SubResource( 2 )
 text = "Day 1"
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 8 )
 volume_db = -18.0
 autoplay = true
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 9 )
 cell_size = Vector2( 16, 15 )
 format = 1
 tile_data = PoolIntArray( 0, 5, 0 )
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
+[node name="ParallaxBackground" parent="." instance=ExtResource( 10 )]
 [connection signal="asleep" from="Player" to="." method="_on_Player_asleep"]
 [connection signal="screen_entered" from="Player" to="." method="_on_Player_screen_entered"]
 [connection signal="screen_exited" from="Player" to="." method="_on_Player_screen_exited"]
