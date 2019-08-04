@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/images/player/HumanCharacterWalking_2.png" type="Texture" id=12]
 [ext_resource path="res://assets/images/player/HumanCharacterWalking_4.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/player/HumanCharacterWalking_5.png" type="Texture" id=14]
-[ext_resource path="res://assets/sounds/jump.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/snore.ogg" type="AudioStream" id=15]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 17.376
@@ -68,8 +68,7 @@ drag_margin_right = 0.0
 drag_margin_bottom = 0.9
 editor_draw_drag_margin = true
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SnorePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
-volume_db = -16.0
 [connection signal="screen_entered" from="Visibility" to="." method="_on_Visibility_screen_entered"]
 [connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
