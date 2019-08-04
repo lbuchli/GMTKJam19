@@ -64,4 +64,6 @@ func _physics_process(delta):
 	
 	var energy_level = $Player.current_energy
 	var darkness =  ($Player.ENERGY - energy_level)/($Player.ENERGY*2)
-	set("modulate", Color(1-darkness, 1-darkness, 1-darkness))
+	var color = Color(1-darkness, 1-darkness, 1-darkness)
+	set("modulate", color)
+	current_level_instance.get_node("ParallaxBackground/ParallaxLayer").set("modulate", color)
