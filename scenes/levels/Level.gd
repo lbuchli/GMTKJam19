@@ -60,6 +60,10 @@ func _physics_process(delta):
 		 $SlurpPlayer.play(5.5)
 		 tilemap.set_cellv(ppos_feet, -1)
 		 $Player.set("current_energy", $Player.ENERGY)
+	if tilemap.get_cellv(ppos) == 8: # check for on head
+		 $SlurpPlayer.play(5.5)
+		 tilemap.set_cellv(ppos, -1)
+		 $Player.set("current_energy", $Player.ENERGY)
 	elif tilemap.get_cellv(ppos_top) == 6: # check for end
 		if not _next_scene_mutex:
 			_next_scene()
