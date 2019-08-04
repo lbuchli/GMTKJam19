@@ -22,9 +22,7 @@ func _on_Player_asleep():
 	_reset_scene()
 
 func _reset_player():
-	var last_input = $Player.current_input # carry input
 	$Player._init()
-	$Player.current_input = last_input
 	$Player.position = $StartPosition.position
 
 func _reset_scene():
