@@ -11,5 +11,5 @@ dest_files=[ "res://.import/falldown.ogg-0d39080c385591e1d9252d0692af6ae4.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
