@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/images/smiley1.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/images/smiley2.jpg" type="Texture" id=2]
@@ -17,6 +17,13 @@ font_path = "res://assets/fonts/OpenSans-Regular.ttf"
 size = 24
 font_data = SubResource( 3 )
 
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/OpenSans-Light.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = SubResource( 5 )
+
 [node name="End" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,36 +31,49 @@ margin_top = -1.5
 margin_bottom = -1.5
 
 [node name="Title" type="Label" parent="."]
-margin_left = 388.5
-margin_top = 54.0
-margin_right = 643.5
-margin_bottom = 154.0
+margin_left = 385.5
+margin_top = 35.0
+margin_right = 640.5
+margin_bottom = 135.0
 custom_fonts/font = SubResource( 2 )
 text = "Credits"
 align = 1
 valign = 1
 
 [node name="Text" type="Label" parent="."]
-margin_left = 247.5
-margin_top = 193.0
-margin_right = 815.5
-margin_bottom = 301.0
+margin_left = 230.0
+margin_top = 142.0
+margin_right = 798.0
+margin_bottom = 226.0
 custom_fonts/font = SubResource( 4 )
 text = "Many thanks for joining. We hope you enjoyed playing with Erwin, our poor sleepless collegue."
 autowrap = true
 
+[node name="Creds" type="Label" parent="."]
+margin_left = 1.5
+margin_top = 219.0
+margin_right = 1025.5
+margin_bottom = 316.0
+custom_fonts/font = SubResource( 6 )
+text = "Trees in background by: 
+- https://www.maxpixel.net/
+- Image by <a href=\"https://pixabay.com/users/susannp4-1777190/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1511603\">Susann Mielke</a> from <a href=\"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1511603\">Pixabay</a>
+- Image by <a href=\"https://pixabay.com/users/kmicican-2305081/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1994653\">kmicican</a> from <a href=\"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1994653\">Pixabay</a>
+"
+clip_text = true
+
 [node name="Smiley1" type="TextureRect" parent="."]
 margin_left = 103.0
-margin_top = 305.0
-margin_right = 470.0
-margin_bottom = 566.0
+margin_top = 330.0
+margin_right = 421.0
+margin_bottom = 544.0
 texture = ExtResource( 1 )
 expand = true
 
 [node name="Smiley2" type="TextureRect" parent="."]
-margin_left = 502.0
-margin_top = 302.0
-margin_right = 868.0
-margin_bottom = 571.0
+margin_left = 552.0
+margin_top = 330.0
+margin_right = 870.0
+margin_bottom = 544.0
 texture = ExtResource( 2 )
 expand = true
