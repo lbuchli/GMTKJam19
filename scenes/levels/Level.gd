@@ -11,6 +11,7 @@ var _next_scene_mutex = false
 func _ready():
 	current_level_instance = levels[current_level].instance()
 	add_child(current_level_instance)
+	_limit_camera()
 
 func _on_Player_screen_entered():
 	_reset_player()
@@ -42,6 +43,7 @@ func _next_scene():
 		add_child(current_level_instance)
 		$HUDLayer/Day.text = "Day " + str(current_level + 1)
 		_reset_player()
+		_limit_camera()
 	else:
 		$FadeOut.play("fade")
 		yield($FadeOut, "animation_finished")
@@ -71,3 +73,9 @@ func _physics_process(delta):
 	var parallax_layers = get_node("ParallaxBackground").get_children()
 	for layer in parallax_layers:
 		layer.set("modulate", color)
+
+func _limit_camera():
+	if current_level_instance.has_node("CameraEnd"):
+		$Player.get_node("Camera2D").limit_right = current_level_instance.get_node("CameraEnd").position.x
+	else:
+		$Player.get_node("Camera2D").limit_right = 4096

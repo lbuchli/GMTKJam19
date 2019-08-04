@@ -88,6 +88,5 @@ tile_data = PoolIntArray( 0, 5, 0 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 [connection signal="asleep" from="Player" to="." method="_on_Player_asleep"]
-[connection signal="energy_changed" from="Player" to="." method="_on_Player_energy_changed"]
 [connection signal="screen_entered" from="Player" to="." method="_on_Player_screen_entered"]
 [connection signal="screen_exited" from="Player" to="." method="_on_Player_screen_exited"]

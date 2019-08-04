@@ -5,8 +5,6 @@ signal input_changed(new_input)
 signal screen_entered
 signal screen_exited
 signal asleep
-signal energy_changed(energy_level)
-
 const INPUTS = ["right", "left", "jump"]
 
 const UP = Vector2(0, -1)
