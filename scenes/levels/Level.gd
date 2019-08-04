@@ -23,10 +23,11 @@ func _ready():
 	_limit_camera()
 
 func _on_Player_screen_entered():
-	_reset_player()
+	pass
 
 func _on_Player_screen_exited():
-	call_deferred("_reset_scene")
+	if not waiting:
+		call_deferred("_reset_scene")
 
 func _on_Player_asleep():
 	_reset_scene()
