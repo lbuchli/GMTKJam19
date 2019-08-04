@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Erwin"
 run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://assets/images/tiles/bed-icon.png"
+config/icon="res://assets/images/bed-icon.png"
 
 [display]
 

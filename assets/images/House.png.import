@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bed-icon.png-48338674492c6d504f2f924c7e4639c3.stex"
+path="res://.import/House.png-f1409e9f4113aec8ed3dc81bd4d7c742.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tiles/bed-icon.png"
-dest_files=[ "res://.import/bed-icon.png-48338674492c6d504f2f924c7e4639c3.stex" ]
+source_file="res://assets/images/House.png"
+dest_files=[ "res://.import/House.png-f1409e9f4113aec8ed3dc81bd4d7c742.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

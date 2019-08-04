@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coffee-icon.png-243f1e2bbfe556a03665f39262ccbbb2.stex"
+path="res://.import/Office.png-d1dff6d4d1448b486e12b3ebab4f9f64.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tiles/coffee-icon.png"
-dest_files=[ "res://.import/coffee-icon.png-243f1e2bbfe556a03665f39262ccbbb2.stex" ]
+source_file="res://assets/images/Office.png"
+dest_files=[ "res://.import/Office.png-d1dff6d4d1448b486e12b3ebab4f9f64.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
