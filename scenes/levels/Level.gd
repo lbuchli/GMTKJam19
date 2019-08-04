@@ -61,10 +61,12 @@ func _physics_process(delta):
 			_next_scene()
 	
 	var energy_level = $Player.current_energy
-	var darkness =  ($Player.ENERGY - energy_level)/($Player.ENERGY*2)
-	var color = Color(1-darkness, 1-darkness, 1-darkness)
-	set("modulate", color)
+	var darkness =  1-($Player.ENERGY - energy_level)/($Player.ENERGY*2)
 	
+	$AudioPlayer.set("pitch_scale", darkness*darkness*darkness/2 + 0.7)
+	
+	var color = Color(darkness, darkness, darkness)
+	set("modulate", color)
 	var parallax_layers = current_level_instance.get_node("ParallaxBackground").get_children()
 	for layer in parallax_layers:
 		layer.set("modulate", color)

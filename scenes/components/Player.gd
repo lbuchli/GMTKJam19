@@ -100,8 +100,9 @@ func _move(input, delta):
 	else:
 		$AnimatedSprite.flip_h = input.x < 0
 		
-	if jump < 0:
+	if jump == -1 and not $AudioPlayer.playing:
 		$AnimatedSprite.play("jump")
+		$AudioPlayer.play(0.75)
 
 func _has_input_changed(inputs):
 	for input in inputs:
