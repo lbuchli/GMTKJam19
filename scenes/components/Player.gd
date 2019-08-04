@@ -31,6 +31,7 @@ var input_queue = []
 var current_input = Vector2(0, 0)
 
 var jumped = false
+var asleep = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,7 +44,9 @@ func _ready():
 func _physics_process(delta):
 	# if asleep, do not react
 	if current_energy <= 0:
-		fall_asleep()
+		if !asleep:
+			fall_asleep()
+			asleep = true
 		return
 	
 	# push new input
@@ -116,8 +119,10 @@ func _on_Visibility_screen_exited():
 	
 func fall_asleep():
 	$AnimatedSprite.play("fall_asleep")
+	$SnorePlayer.play(21)
 	$CollisionShape2D.position.y += 16*4
 	yield($AnimatedSprite, "animation_finished")
 	$CollisionShape2D.position.y -= 16*4
+	$SnorePlayer.stop()
 	emit_signal("asleep")
 	current_energy = ENERGY

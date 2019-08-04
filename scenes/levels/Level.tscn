@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/Level1.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/sounds/maintheme.wav" type="AudioStream" id=6]
 [ext_resource path="res://gdresources/Tileset.tres" type="TileSet" id=7]
 [ext_resource path="res://scenes/components/ParallaxBackground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sounds/slurp.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -87,6 +88,9 @@ format = 1
 tile_data = PoolIntArray( 0, 5, 0 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
+
+[node name="SlurpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 [connection signal="asleep" from="Player" to="." method="_on_Player_asleep"]
 [connection signal="screen_entered" from="Player" to="." method="_on_Player_screen_entered"]
 [connection signal="screen_exited" from="Player" to="." method="_on_Player_screen_exited"]
