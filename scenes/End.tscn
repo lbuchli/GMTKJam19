@@ -18,10 +18,9 @@ size = 24
 font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFontData" id=5]
-font_path = "res://assets/fonts/OpenSans-Light.ttf"
+font_path = "res://assets/fonts/OpenSans-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-size = 12
 font_data = SubResource( 5 )
 
 [node name="End" type="Control"]
@@ -50,30 +49,30 @@ text = "Many thanks for joining. We hope you enjoyed playing with Erwin, our poo
 autowrap = true
 
 [node name="Creds" type="Label" parent="."]
-margin_left = 1.5
+margin_left = 231.0
 margin_top = 219.0
-margin_right = 1025.5
-margin_bottom = 316.0
+margin_right = 764.0
+margin_bottom = 322.0
 custom_fonts/font = SubResource( 6 )
-text = "Trees in background by: 
-- https://www.maxpixel.net/
-- Image by <a href=\"https://pixabay.com/users/susannp4-1777190/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1511603\">Susann Mielke</a> from <a href=\"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1511603\">Pixabay</a>
-- Image by <a href=\"https://pixabay.com/users/kmicican-2305081/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1994653\">kmicican</a> from <a href=\"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1994653\">Pixabay</a>
-"
+text = "Trees in background by: https://www.maxpixel.net/ 
+and images of Susann Mielke from Pixabay 
+and kmicican from Pixabay"
+align = 1
+valign = 1
 clip_text = true
 
 [node name="Smiley1" type="TextureRect" parent="."]
 margin_left = 103.0
-margin_top = 330.0
+margin_top = 340.0
 margin_right = 421.0
-margin_bottom = 544.0
+margin_bottom = 554.0
 texture = ExtResource( 1 )
 expand = true
 
 [node name="Smiley2" type="TextureRect" parent="."]
 margin_left = 552.0
-margin_top = 330.0
+margin_top = 340.0
 margin_right = 870.0
-margin_bottom = 544.0
+margin_bottom = 554.0
 texture = ExtResource( 2 )
 expand = true
