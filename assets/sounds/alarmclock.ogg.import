@@ -11,5 +11,5 @@ dest_files=[ "res://.import/alarmclock.ogg-7714826f4e36df1ce3fa89dfc5d57b68.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
