@@ -54,7 +54,7 @@ func _physics_process(delta):
 	ppos.x /= 4; ppos.y /= 4
 	var ppos_feet = ppos + Vector2(0, 1)
 	var ppos_top = ppos - Vector2(0, 10)
-	if tilemap.get_cellv(ppos_feet) == 1: # check for coffee
+	if tilemap.get_cellv(ppos_feet) == 8: # check for coffee
 		 tilemap.set_cellv(ppos_feet, -1)
 		 $Player.set("current_energy", $Player.ENERGY)
 	elif tilemap.get_cellv(ppos_top) == 6: # check for end
