@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/images/tiles/bed-icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/bed-icon.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/OpenSans-ExtraBold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/fonts/OpenSans-SemiboldItalic.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/fonts/OpenSans-Italic.ttf" type="DynamicFontData" id=6]

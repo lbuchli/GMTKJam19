@@ -11,11 +11,19 @@ dest_files=[ "res://.import/maintheme.wav-3f0420ca8517936103aec815a499e799.sampl
 
 [params]
 
+<<<<<<< HEAD
 force/8_bit=true
+=======
+force/8_bit=false
+>>>>>>> 678cc949340e03b0340e594f6771efb6cd4e5bac
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
+<<<<<<< HEAD
 edit/loop=true
+=======
+edit/loop=false
+>>>>>>> 678cc949340e03b0340e594f6771efb6cd4e5bac
 compress/mode=0
