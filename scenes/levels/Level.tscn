@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/Level1.tscn" type="PackedScene" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://assets/sounds/maintheme.wav" type="AudioStream" id=8]
 [ext_resource path="res://gdresources/Tileset.tres" type="TileSet" id=9]
 [ext_resource path="res://scenes/components/ParallaxBackground.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/sounds/door-home.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/door-office.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/alarmclock.ogg" type="AudioStream" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -91,6 +94,15 @@ tile_data = PoolIntArray( 0, 5, 0 )
 [node name="ParallaxBackground" parent="." instance=ExtResource( 10 )]
 
 [node name="SlurpPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="HouseDoorPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="WorkDoorPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="AlarmPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 [connection signal="asleep" from="Player" to="." method="_on_Player_asleep"]
 [connection signal="screen_entered" from="Player" to="." method="_on_Player_screen_entered"]
 [connection signal="screen_exited" from="Player" to="." method="_on_Player_screen_exited"]
