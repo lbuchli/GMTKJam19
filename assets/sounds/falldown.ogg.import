@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/falldown.ogg-0d39080c385591e1d9252d0692af6ae4.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/falldown.ogg"
+dest_files=[ "res://.import/falldown.ogg-0d39080c385591e1d9252d0692af6ae4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

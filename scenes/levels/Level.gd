@@ -52,11 +52,12 @@ func _physics_process(delta):
 	var tilemap = current_level_instance.get_node("TileMap")
 	var ppos = tilemap.world_to_map($Player.position)
 	ppos.x /= 4; ppos.y /= 4
-	ppos.y += 1
-	if tilemap.get_cellv(ppos) == 1: # check for coffee
-		 tilemap.set_cellv(ppos, -1)
+	var ppos_feet = ppos + Vector2(0, 1)
+	var ppos_top = ppos - Vector2(0, 10)
+	if tilemap.get_cellv(ppos_feet) == 1: # check for coffee
+		 tilemap.set_cellv(ppos_feet, -1)
 		 $Player.set("current_energy", $Player.ENERGY)
-	elif tilemap.get_cellv(ppos) == 32: # check for end
+	elif tilemap.get_cellv(ppos_top) == 6: # check for end
 		if not _next_scene_mutex:
 			_next_scene()
 	
@@ -67,6 +68,6 @@ func _physics_process(delta):
 	
 	var color = Color(darkness, darkness, darkness)
 	set("modulate", color)
-	var parallax_layers = current_level_instance.get_node("ParallaxBackground").get_children()
+	var parallax_layers = get_node("ParallaxBackground").get_children()
 	for layer in parallax_layers:
 		layer.set("modulate", color)
