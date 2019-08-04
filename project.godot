@@ -15,9 +15,15 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GMTKJam19"
+config/name="Erwin"
 run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/images/tiles/bed-icon.png"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [input]
 

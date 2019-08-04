@@ -2,18 +2,18 @@
 
 [ext_resource path="res://scenes/components/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/player/HumanCharacterStanding.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/player/HumanCharacterJumping_0.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/player/HumanCharacterJumping_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_0.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_2.png" type="Texture" id=7]
-[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_3.png" type="Texture" id=8]
-[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_4.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/player/HumanCharacterWalking_1.png" type="Texture" id=10]
-[ext_resource path="res://assets/images/player/HumanCharacterWalking_2.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/player/HumanCharacterWalking_4.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/player/HumanCharacterWalking_5.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/player/HumanCharacterMidAir.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/player/HumanCharacterWalking_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/player/HumanCharacterWalking_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/player/HumanCharacterWalking_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/player/HumanCharacterWalking_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/player/HumanCharacterJumping_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/player/HumanCharacterJumping_1.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/player/HumanCharacterMidAir.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_0.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/player/HumanCharacterFallingAsleep_4.png" type="Texture" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 17.376
@@ -26,19 +26,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "fall_asleep",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "fall_asleep",
 "speed": 5.0
 } ]
 
@@ -57,12 +57,14 @@ animation = "idle"
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 200, 0 )
+offset = Vector2( 200, 30 )
 current = true
+limit_left = -200
 smoothing_enabled = true
 drag_margin_left = 0.1
 drag_margin_top = 0.1
 drag_margin_right = 0.0
-drag_margin_bottom = 0.0
+drag_margin_bottom = 0.9
+editor_draw_drag_margin = true
 [connection signal="screen_entered" from="Visibility" to="." method="_on_Visibility_screen_entered"]
 [connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]

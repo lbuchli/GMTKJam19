@@ -51,11 +51,12 @@ func _next_scene():
 func _physics_process(delta):
 	var tilemap = current_level_instance.get_node("TileMap")
 	var ppos = tilemap.world_to_map($Player.position)
+	ppos.x /= 4; ppos.y /= 4
 	ppos.y += 1
 	if tilemap.get_cellv(ppos) == 1: # check for coffee
 		 tilemap.set_cellv(ppos, -1)
 		 $Player.set("current_energy", $Player.ENERGY)
-	elif tilemap.get_cellv(ppos) == 2: # check for bed
+	elif tilemap.get_cellv(ppos) == 32: # check for end
 		if not _next_scene_mutex:
 			_next_scene()
 	
