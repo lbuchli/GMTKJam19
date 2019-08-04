@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/citybackground.png-680d7f9bf73dee8f396da63479a6e97b.stex"
+path="res://.import/citybackground-street.png-acb5e3b653be61ab8a3e3a485b61ede6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/citybackground.png"
-dest_files=[ "res://.import/citybackground.png-680d7f9bf73dee8f396da63479a6e97b.stex" ]
+source_file="res://assets/images/citybackground-street.png"
+dest_files=[ "res://.import/citybackground-street.png-acb5e3b653be61ab8a3e3a485b61ede6.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
