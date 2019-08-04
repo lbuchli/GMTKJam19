@@ -14,6 +14,7 @@ func _input(event):
 	
 
 func _on_Start_Button_pressed():
+	$StartMenu/Button.disabled = true
 	$AnimationPlayer.play("Storytransition")
 	yield($AnimationPlayer, "animation_finished")
 	animation_finished = true

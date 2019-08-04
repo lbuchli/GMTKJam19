@@ -43,7 +43,7 @@ func _ready():
 
 func _physics_process(delta):
 	# if asleep, do not react
-	if current_energy <= 0:
+	if current_energy <= 0 and is_on_floor():
 		if !asleep:
 			fall_asleep()
 			asleep = true
