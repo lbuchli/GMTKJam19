@@ -1,18 +1,21 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/levels/Level2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/levels/Level3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/levels/Level4.tscn" type="PackedScene" id=5]
-[ext_resource path="res://gdresources/Tileset.tres" type="TileSet" id=6]
-[ext_resource path="res://scenes/components/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/fonts/OpenSans-Bold.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://assets/sounds/maintheme.wav" type="AudioStream" id=9]
-[ext_resource path="res://scenes/components/ParallaxBackground.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/sounds/door-home.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/sounds/door-office.ogg" type="AudioStream" id=12]
-[ext_resource path="res://assets/sounds/alarmclock.ogg" type="AudioStream" id=13]
+[ext_resource path="res://scenes/levels/Level5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/levels/Level6.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/levels/Level7.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gdresources/Tileset.tres" type="TileSet" id=9]
+[ext_resource path="res://scenes/components/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/fonts/OpenSans-Bold.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/sounds/maintheme.wav" type="AudioStream" id=12]
+[ext_resource path="res://scenes/components/ParallaxBackground.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sounds/door-home.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/door-office.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/alarmclock.ogg" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -36,7 +39,7 @@ tracks/1/imported = false
 tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 4.13855e+16 ),
+"transitions": PoolRealArray( 1, 1, 4.13855e+016 ),
 "update": 0,
 "values": [ 0.0, 90.0, 0.0 ]
 }
@@ -55,20 +58,20 @@ tracks/2/keys = {
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
-font_data = ExtResource( 8 )
+font_data = ExtResource( 11 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
-levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]
+levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 9 )
 cell_size = Vector2( 16, 15 )
 format = 1
 tile_data = PoolIntArray( 0, 5, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 7 )]
+[node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 6.74969, -11.2503 )
 
 [node name="FadeOut" type="AnimationPlayer" parent="."]
@@ -87,22 +90,22 @@ custom_fonts/font = SubResource( 2 )
 text = "Day 1"
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 12 )
 volume_db = -18.0
 autoplay = true
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 10 )]
+[node name="ParallaxBackground" parent="." instance=ExtResource( 13 )]
 
 [node name="SlurpPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="HouseDoorPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 14 )
 
 [node name="WorkDoorPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 15 )
 
 [node name="AlarmPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 16 )
 [connection signal="asleep" from="Player" to="." method="_on_Player_asleep"]
 [connection signal="screen_entered" from="Player" to="." method="_on_Player_screen_entered"]
 [connection signal="screen_exited" from="Player" to="." method="_on_Player_screen_exited"]
